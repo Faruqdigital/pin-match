@@ -52,30 +52,37 @@
                             </div>
 
                             <div class="calc-row">
-                                <div class="button"> < </div>
-                                <div class="button" onclick="showInput(this.innerText)">0</div>
-                                <div class="button" onclick="clearInput()">C</div>
+                                <div class="button" onclick="removeElement ()">
+                                    < </div>
+                                        <div class="button" onclick="showInput(this.innerText)">0</div>
+                                        <div class="button" onclick="clearInput()">C</div>
+                                </div>
+
+                                <div>
+                                    <button type="submit" class="submit-btn" onclick="checkPin ()">Submit</button>
+                                    <p class="action-left"><span id="tryLeft"> 3 </span> try left</p>
+                                </div>
+
                             </div>
 
-                            <div>
-                                <button type="submit" class="submit-btn">Submit</button>
-                                <p class="action-left"><span id="tryLeft"> 3 </span> try left</p>
-                            </div>
-
-                        </div>
-
-                        <div class="notify-section">
-                            <p class="notify wrong-pin">❌ Pin Didn't Match, Please try again</p>
-                            <p class="notify correct-pin">✅ Pin Matched... Secret door is opening for you</p>
                         </div>
 
                     </div>
 
                 </div>
 
+                <div class="notify-section">
+                    <p class="notify wrong-pin">❌ Pin Didn't Match, Please try again</p>
+                    <p class="notify correct-pin">✅ Pin Matched... Secret door is opening for you</p>
+                </div>
+
             </div>
 
-            <script src="app.js"></script>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
 
 </body>
 

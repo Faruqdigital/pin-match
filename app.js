@@ -22,3 +22,48 @@ function clearInput() {
 }
 
 // Task 05 (Remove element one by one) using < calculator
+function removeElement () {
+    const currentValue = document.querySelector(".showValue").value;
+    const newValue = currentValue.substring(0, currentValue.length - 1);
+    document.querySelector(".showValue").value = newValue;
+}
+
+// Task 06 - (Check pin) if the pin matched or not
+function checkPin () {
+    const generatedPin = document.querySelector(".generatedPin").value;
+    const newPin = document.querySelector(".showValue").value;
+
+    if(generatedPin == newPin) {
+        document.querySelector(".correct-pin").style.display = "block";
+        document.querySelector(".wrong-pin").style.display = "none";
+        document.querySelector(".generate-btn").style.backgroundColor = "green";
+        document.querySelector(".submit-btn").style.backgroundColor = "green";
+        document.querySelector(".submit-btn").disabled = true;
+        document.querySelector(".generate-btn").disabled = true;
+    }
+    else{
+        document.querySelector(".correct-pin").style.display = "none";
+        document.querySelector(".wrong-pin").style.display = "block";
+        document.querySelector(".generate-btn").style.backgroundColor = "red";
+        document.querySelector(".submit-btn").style.backgroundColor = "red";
+        document.querySelector(".submit-btn").disabled = false;
+        document.querySelector(".generate-btn").disabled = true;
+        
+    let tryLeft = document.querySelector("#tryLeft").innerText
+    let newTryLeft = parseInt(tryLeft)
+    if(newTryLeft > 0){
+        newTryLeft = newTryLeft - 1;
+    }
+    
+    document.querySelector("#tryLeft").innerText = newTryLeft
+    document.querySelector(".showValue").value = ""
+
+    if(newTryLeft === 0) {
+        document.querySelector(".submit-btn").disabled = true;
+        document.querySelector(".submit-btn").style.backgroundColor = "black";
+        document.querySelector(".submit-btn").innerText = "PIN LOCKED"
+    }
+
+    }
+
+} 
